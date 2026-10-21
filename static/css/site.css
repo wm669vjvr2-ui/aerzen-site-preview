@@ -108,3 +108,74 @@ dialog{padding:36px;border:1px solid var(--line);box-shadow:0 15px 60px #0017382
 @media(max-width:767px){.photo-groups{padding-top:20px}.photo-group>summary{padding:22px 0}.photo-group>summary h2{font-size:28px;gap:16px}.photo-group-count{font-size:10px}.photo-group-toggle{font-size:30px}.photo-gallery-description{font-size:15px;margin-bottom:20px}.photo-group-content{padding-bottom:28px}}
 
 .split-hero-product>img{object-fit:contain;background:white}
+
+/* Three primary routes; applications and company information stay in More. */
+.brand{flex-direction:column;align-items:flex-start;gap:3px}
+.brand-caption{font-size:10px;line-height:1.3;color:var(--muted);white-space:nowrap;letter-spacing:.015em}
+.desktop-nav{gap:clamp(22px,2.5vw,42px)}
+.desktop-nav .nav-parts{line-height:1.3}
+.header-more{position:relative;font-size:14px}
+.header-more>summary{display:flex;align-items:center;gap:8px;min-height:44px;list-style:none;cursor:pointer}
+.header-more>summary::-webkit-details-marker{display:none}
+.header-more[open]>summary{color:var(--blue)}
+.header-more nav{position:absolute;top:calc(100% + 10px);right:0;min-width:220px;padding:12px;background:var(--paper);border:1px solid var(--line);box-shadow:0 16px 40px #1113180c}
+.header-more nav a{display:flex;align-items:center;padding:12px;min-height:44px}
+.header-more nav a:hover,.header-more nav a[aria-current]{background:var(--wash);color:var(--blue)}
+.mobile-menu nav{max-height:calc(100svh - var(--header));overflow:auto}
+.mobile-menu a[aria-current]{color:var(--blue)}
+.mobile-secondary-start{border-top:1px solid var(--line);padding-top:20px}
+@media(max-width:1200px){.desktop-nav,.header-more{display:none}.mobile-menu{display:block}}
+@media(max-width:767px){.brand-caption{font-size:9px;letter-spacing:0}.brand{gap:1px}}
+
+/* Parts use the existing editorial system, without a new component runtime. */
+.parts-hero{display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:4vw;padding-top:28px;padding-bottom:64px}
+.parts-hero h1{font-size:clamp(48px,5.2vw,84px);line-height:1.02;letter-spacing:-.055em;margin:24px 0 30px}
+.parts-hero h1 em{font-style:normal;color:var(--blue)}
+.parts-hero-copy>p{max-width:440px;font-size:20px;color:var(--muted);line-height:1.5;margin-bottom:30px}
+.parts-hero figure{margin:0;min-width:0}
+.parts-hero img{width:100%;height:clamp(300px,34vw,520px);object-fit:contain}
+.parts-hero figcaption{font-size:12px;color:var(--muted);text-align:right;margin-top:16px}
+.parts-catalog{padding-top:50px}
+.parts-row{display:grid;grid-template-columns:70px minmax(0,1fr) 140px;gap:32px;padding:36px 0;border-top:1px solid var(--line);align-items:start;scroll-margin-top:calc(var(--header) + 24px)}
+.parts-row:last-child{border-bottom:1px solid var(--line)}
+.parts-row .path-number{font-size:36px;line-height:1.15}
+.parts-row h3{font-size:clamp(26px,2.7vw,42px);line-height:1.15;margin:0 0 16px;letter-spacing:-.035em}
+.parts-row p{font-size:17px;line-height:1.6;color:var(--muted);max-width:670px}
+.parts-row>.underlined{font-size:16px;min-height:44px;justify-self:end}
+.parts-selection{display:grid;grid-template-columns:1fr 1fr;gap:7vw;background:var(--wash)}
+.parts-selection h2{font-size:clamp(42px,5vw,74px);line-height:1.03;margin:20px 0 26px;letter-spacing:-.045em}
+.parts-selection>div>p{font-size:19px;max-width:390px;color:var(--muted);line-height:1.5;margin-bottom:30px}
+.parts-selection .button{margin-bottom:26px}
+.parts-phone{display:block;font-size:26px;margin-bottom:10px;width:max-content;max-width:100%}
+.parts-email{font-size:17px;color:var(--blue)}
+.parts-checklist{padding:0;margin:0;list-style:none;align-self:center}
+.parts-checklist li{display:flex;gap:24px;padding:28px 0;border-top:1px solid var(--line)}
+.parts-checklist li:last-child{border-bottom:1px solid var(--line)}
+.parts-checklist li>span{font-size:13px;color:var(--blue);padding-top:6px}
+.parts-checklist h3{font-size:25px;margin-bottom:12px;letter-spacing:-.025em}
+.parts-checklist p{color:var(--muted);font-size:17px;line-height:1.5}
+.parts-related{display:flex;flex-wrap:wrap;gap:24px 50px;padding-top:40px;padding-bottom:40px}
+.path-body h3{overflow-wrap:normal}
+.showcase-image-catalogue{justify-content:center;top:56%;bottom:12%}
+.showcase-image-catalogue img{width:auto;max-width:100%;height:360px;max-height:100%;filter:none}
+@media(max-width:767px){
+ .parts-hero{grid-template-columns:1fr;padding-top:14px;padding-bottom:30px;gap:30px}
+ .parts-hero h1{font-size:clamp(42px,10.5vw,62px);margin:18px 0 24px}
+ .parts-hero-copy>p{font-size:17px;margin-bottom:24px}
+ .parts-hero img{height:auto;max-height:340px}
+ .parts-hero figcaption{text-align:left;margin-top:10px}
+ .parts-catalog{padding-top:30px}
+ .parts-row{grid-template-columns:32px minmax(0,1fr);gap:14px;padding:26px 0}
+ .parts-row .path-number{font-size:24px}
+ .parts-row h3{font-size:27px;margin-bottom:12px}
+ .parts-row p{font-size:15px}
+ .parts-row>.underlined{grid-column:2;justify-self:start;font-size:14px}
+ .parts-selection{grid-template-columns:1fr;gap:35px}
+ .parts-selection>div>p,.parts-checklist p{font-size:16px}
+ .parts-checklist h3{font-size:22px}
+ .parts-checklist li{gap:18px;padding:22px 0}
+ .parts-related{flex-direction:column;align-items:flex-start;gap:22px;font-size:16px}
+ .path-card .path-body h3{font-size:clamp(20px,5.3vw,27px)}
+ .showcase-image-catalogue img{max-height:260px}
+ .showcase-image-catalogue{top:28%;bottom:38%}
+}

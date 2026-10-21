@@ -1,4 +1,5 @@
 /* Small progressive enhancements. All main navigation also works without JS. */
+document.querySelectorAll('.header-more,.mobile-menu').forEach(menu=>menu.addEventListener('keydown',event=>{if(event.key==='Escape'){menu.open=false;menu.querySelector('summary').focus();}}));
 const dialogs = [...document.querySelectorAll('dialog')];
 let previousFocus = null;
 function openDialog(dialog) {
@@ -26,13 +27,6 @@ document.querySelectorAll('[data-request-form]').forEach(form=>{
  form.addEventListener('submit',event=>{const email=form.querySelector('[name=email]');const phone=form.querySelector('[name=phone]');if(!email.value.trim()&&!phone.value.trim()){event.preventDefault();form.classList.add('form-invalid');phone.setCustomValidity('Укажите телефон или e-mail, чтобы мы могли ответить.');phone.reportValidity();return;}phone.setCustomValidity('');const button=form.querySelector('[type=submit]');if(button){button.disabled=true;button.setAttribute('aria-busy','true');form.querySelector('.form-feedback').textContent='Отправляем…';}});
  form.querySelectorAll('[name=phone],[name=email]').forEach(input=>input.addEventListener('input',()=>form.querySelector('[name=phone]').setCustomValidity('')));
 });
-const assembly=document.querySelector('[data-blower-section]');
-if(assembly){
- import('./blower-video.js').then(({initBlowerVideo})=>initBlowerVideo(assembly)).catch(()=>{
-  assembly.dataset.motionState='error';assembly.dataset.static='true';assembly.dataset.videoReady='false';
-  assembly.querySelector('video')?.pause();assembly.querySelectorAll('[data-video-play],[data-motion-toggle]').forEach(button=>{button.hidden=true;});
- });
-}
 window.addEventListener('pageshow',()=>document.querySelectorAll('[data-request-form] [aria-busy]').forEach(b=>{b.disabled=false;b.removeAttribute('aria-busy');}));
 
 /* Photo links remain ordinary files without JS or native dialog support. */
