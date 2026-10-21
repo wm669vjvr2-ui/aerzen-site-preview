@@ -178,4 +178,5 @@ dialog{padding:36px;border:1px solid var(--line);box-shadow:0 15px 60px #0017382
  .path-card .path-body h3{font-size:clamp(20px,5.3vw,27px)}
  .showcase-image-catalogue img{max-height:260px}
  .showcase-image-catalogue{top:28%;bottom:38%}
+ .showcase-image-restored{top:20%;bottom:42%}
 }
