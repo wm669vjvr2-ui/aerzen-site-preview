@@ -125,7 +125,16 @@ dialog{padding:36px;border:1px solid var(--line);box-shadow:0 15px 60px #0017382
 .mobile-menu a[aria-current]{color:var(--blue)}
 .mobile-secondary-start{border-top:1px solid var(--line);padding-top:20px}
 @media(max-width:1200px){.desktop-nav,.header-more{display:none}.mobile-menu{display:block}}
-@media(max-width:767px){.brand-caption{font-size:9px;letter-spacing:0}.brand{gap:1px}}
+/* The mobile phone has its own row; the entire header scrolls with the page. */
+@media(max-width:767px){
+ :root{--header:120px;scroll-padding-top:16px}
+ .site-header{position:relative;align-items:flex-start;padding-top:12px}
+ .brand-caption{font-size:9px;letter-spacing:0}
+ .brand{gap:1px;min-height:44px;justify-content:center}
+ .header-actions{margin-left:auto}
+ .header-cta{display:flex;position:absolute;left:var(--space);right:var(--space);bottom:10px;min-height:44px;padding:10px 16px;font-size:15px;gap:16px;justify-content:space-between;white-space:nowrap}
+ .showcase-slide,.request-block,.parts-row{scroll-margin-top:16px}
+}
 
 /* Parts use the existing editorial system, without a new component runtime. */
 .parts-hero{display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:4vw;padding-top:28px;padding-bottom:64px}
